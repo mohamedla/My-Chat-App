@@ -1,11 +1,11 @@
 # My Chat APP
 Is a simple chat app to chat with local user realtime
 
-#features
+# features
 - User Registration
 - send and receive messages
 
-#technology
+# technology
 - PHP
 - AJAX
 - JS
