@@ -1,7 +1,7 @@
 # My Chat APP
 Is a simple chat app to chat with local user realtime
 
-# features
+# Features
 - User Registration
 - send and receive messages
 
