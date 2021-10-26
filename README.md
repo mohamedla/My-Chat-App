@@ -4,6 +4,7 @@ Is a simple chat app to chat with local user realtime
 #features
 - User Registration
 - send and receive messages
+
 #technology
 - PHP
 - AJAX
