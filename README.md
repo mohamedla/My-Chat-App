@@ -1,9 +1,10 @@
 # My Chat APP
-Is a simple chat app to chat with local user realtime
+Is A Chat App To Chat With Local User In Realtime
 
 # Features
 - User Registration
-- send and receive messages
+- User Profile Updatable
+- send and receive text,image,audio,video,file messages
 
 # technology
 - PHP
