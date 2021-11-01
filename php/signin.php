@@ -11,6 +11,8 @@
                 $row = mysqli_fetch_assoc($sql);
                 $_SESSION['unique_id'] = $row['unique_id'];
                 $sql = mysqli_query( $connection,"UPDATE users SET stutus= 'Active Now' WHERE unique_id= {$row['unique_id']}");
+                $sql2 = mysqli_query( $connection,"UPDATE messages SET msg_status= 'receive' 
+                                        WHERE (incomming_id= {$row['unique_id']}) AND (msg_status= 'send')");
                 echo "seccess";
             }else{
                 echo 'Email and password is incorrect!';

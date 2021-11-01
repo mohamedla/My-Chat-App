@@ -6,6 +6,7 @@
 ?>
 <?php
     include_once "header.php";
+    include_once "php/connected.php";
 ?>
     <body>
         <div class="wrapper">
@@ -18,13 +19,14 @@
                             $row = mysqli_fetch_assoc($sql);
                         }
                     ?>
+                    <a href="profile.php">
                     <div class="content">
                         <img src="php/images/<?php echo $row['img']; ?>" alt="">
                         <div class="details">
                             <span><?php echo $row['fname'] . ' ' . $row['lname'] ?></span>
                             <p><?php echo $row['stutus'] ?></p>
                         </div>
-                    </div>
+                    </div></a>
                     <a href="php/logout.php" class="logout">Logout</a>
                 </header>
                 <div class="search">
@@ -38,5 +40,6 @@
             </section>
         </div>
         <script type="text/javascript" src="js/user.js"></script>
+        <script type="text/javascript" src="js/isconnect.js"></script>
     </body>
 </html>

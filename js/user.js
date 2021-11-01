@@ -43,7 +43,6 @@ setInterval(()=>{
                 
             }
         }
-
     }
     req.send();
 },500);
