@@ -1,10 +1,16 @@
 # My Chat APP
 Is a simple chat app to chat with local user realtime
 
-#features
+# Features
 - User Registration
 - send and receive messages
 
+# technology
+- PHP
+- AJAX
+- JS
+- CSS
+- HTML5
 
 # Preparation Steps:
 1. You need to create the database. The scripts for the database is in the 'sql' directory.
