@@ -4,7 +4,7 @@ Is A Chat App To Chat With Local User In Realtime
 # Features
 - User Registration
 - User Profile Updatable
-- send and receive text,image,audio,video,file messages
+- send and receive text,image,audio,video and file messages
 
 # technology
 - PHP
