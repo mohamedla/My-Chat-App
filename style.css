@@ -242,12 +242,51 @@ body{
     object-fit: cover;
     border-radius: 50%;
 }
+.users-list a .status-icon{
+  display: flex;
+}
+.users-list a .status-icon div{
+  margin: 5px;
+}
 .users-list a .status-dot{
     color: #468669;
     font-size: 12px;
 }
 .users-list a  .status-dot.offline{
     color: #ccc;
+}
+.users-list a .unseen-msg{
+  font-size: 20px;
+}
+.users-list a .unseen-msg.none{
+  display: none;
+}
+.users-list a .unseen-msg i::before{
+  /* content: '45'; */
+  /* color: #fff; */
+  display: inline-block;
+  /* position: absolute; */
+  top:19%;
+  left:-34%;
+  /* font-size: 10px; */
+}
+.users-list a .unseen-msg i{
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  right: 2px;
+  color: #468669;
+  /* font-size: 10px */
+}
+.users-list a .unseen-msg span{
+  color: #fff;
+    position: relative;
+    right: 15px;
+    bottom: 1px;
+    font-size: 19px;
+    font-family: fangsong;
+    padding: 0px;
+    font-weight: 500;
 }
 .users-list{
     max-height: 350px;
@@ -278,7 +317,7 @@ body{
 }
 .chat-area header img{
   height: 45px;
-  width: 45;
+  width: 45px;
   border-radius: 50%;
   margin: 0 15px;
 }
@@ -368,13 +407,20 @@ body{
   outline: none;
 }
 /*  send file in chat */ 
+.chat-area .typing-area .file-snder-contaner{
+  height: 0px;
+  position: absolute;
+}
   .chat-area .typing-area .file-sender{
     justify-content: space-between;
-    border: 1px solid #ccc;
     align-content: center;
     padding-right: 5px;
-    background-color:#333;
+    background-color:#8b8e9973;
     display: none;
+    position: relative;
+    bottom: 150px;
+    left: 307px;
+    border-radius: 5px 5px 0 0;
   }
   .chat-area .typing-area label.filebutton{
   width:52px;
@@ -383,8 +429,11 @@ body{
   font-size: 25px;
   padding-top: 0;
   }
+  .chat-area .typing-area .file-sender .attachfile{
+    list-style-type: none;
+  }
   .chat-area .typing-area label i{
-    color: #fff;
+    color: #1a1212;
     padding-left: 5px;
 
   }
@@ -444,10 +493,6 @@ body{
 }
 .blue{
   color: rgb(126, 214, 243);
-}
-.attachfile{
-  display: flex;
-  list-style-type: none;
 }
 /* end */
 .chat-area .typing-area button{
@@ -635,26 +680,7 @@ video::-webkit-media-controls-enclosure {
 }
  .profile form #imga input{
    padding-top: 7px;
-  /*height: 38px;
-  background: transparent;
-  border: 0;
-  left: 0;
-  opacity: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 1;
-  padding-top: 7px;*/
   }
-  
-/*.profile form #imga label{
-  font-size: 13px;
-  position: relative;
-  top: -7px;
-  left: 75px;
-  font-weight: 500;
-  z-index: 0;
-  }  */
 .profile form .image .input-file::-webkit-file-upload-button {
   visibility: hidden;
 }
@@ -663,25 +689,6 @@ video::-webkit-media-controls-enclosure {
   background-size: cover;
   background-position: center center;
 }
-/* .profile form .image .input-file::before {
-  content: 'Select Image';
-  display: inline-block;
-  background: #444;
-  color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 5px 8px;
-  margin: 2px;
-  margin-left: 5px;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 10pt;
-  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.3),
-          0 32px 64px -58px rgba(0, 0, 0, 0.5);
-}  */
 .profile form .image .input-file:hover::before {
   border-color: black;
   font-weight: 600;

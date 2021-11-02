@@ -30,7 +30,7 @@ searchbar.onkeyup = ()=>{
     }
 }
 
-setInterval(()=>{
+var usersint = setInterval(()=>{
     let req = new XMLHttpRequest();
     req.open('GET','php/user.php', true);
     req.onload = ()=>{

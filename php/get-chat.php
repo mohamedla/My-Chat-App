@@ -6,7 +6,7 @@
         $incomming = mysqli_real_escape_string($connection,$_POST['incoming_id']);
         $output = "";
         $sql2 = mysqli_query( $connection,"UPDATE messages SET msg_status= 'seen' 
-                                        WHERE incomming_id= {$outgoing}");
+                                        WHERE (incomming_id= {$outgoing}) AND (outgoing_id ={$incomming}) ");
         $sql = mysqli_query($connection,"SELECT * FROM messages 
                                 LEFT JOIN users ON users.unique_id = messages.outgoing_id
                                 WHERE (outgoing_id ={$outgoing} AND incomming_id = {$incomming})

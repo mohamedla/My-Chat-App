@@ -137,41 +137,24 @@ setInterval(()=>{
 },500);
 
 formimg.onchange = ()=>{
-    let req = new XMLHttpRequest();
-    req.open("post","php/insert-img.php", true);
-    req.onload = ()=>{
-        if(req.readyState === XMLHttpRequest.DONE){
-            if(req.status === 200){
-                if(!chatBox.classList.contains("active")){
-                    scrollToBottom();
-                }
-            }
-        }
-    }
-    let formData = new FormData(form);
-    req.send(formData);
+    addfile("insert-img.php");
 };
 
 formvideo.onchange = function(){
-    let req = new XMLHttpRequest();
-    req.open("post","php/insert-video.php", true);
-    req.onload = ()=>{
-        if(req.readyState === XMLHttpRequest.DONE){
-            if(req.status === 200){
-                if(!chatBox.classList.contains("active")){
-                    scrollToBottom();
-                }
-            }
-        }
-
-    }
-    let formData = new FormData(form);
-    req.send(formData);
+    addfile("insert-video.php");
 };
 
 formaudio.onchange = function(){
+    addfile("insert-audio.php");
+};
+
+formfile.onchange = ()=>{
+    addfile("insert-file.php");
+};
+
+function addfile(direc) {
     let req = new XMLHttpRequest();
-    req.open("post","php/insert-audio.php", true);
+    req.open("post","php/"+direc, true);
     req.onload = ()=>{
         if(req.readyState === XMLHttpRequest.DONE){
             if(req.status === 200){
@@ -184,39 +167,16 @@ formaudio.onchange = function(){
     }
     let formData = new FormData(form);
     req.send(formData);
-};
+}
 
-formfile.onchange = function(){
-    let req = new XMLHttpRequest();
-    req.open("post","php/insert-file.php", true);
-    req.onload = ()=>{
-        if(req.readyState === XMLHttpRequest.DONE){
-            if(req.status === 200){
-                if(!chatBox.classList.contains("active")){
-                    scrollToBottom();
-                }
-            }
-        }
-
-    }
-    let formData = new FormData(form);
-    req.send(formData);
-};
-
-
-
-function myFunction() {
+function displaylist() {
     var attachlist = document.getElementById('file-sender'),
     buttondiv = document.getElementById('attachlink');
     if (attachlist.style.display === "none") {
         attachlist.style.display = "block";
-        buttondiv.style.color = "rgb(255, 255, 255)";
-        buttondiv.style.background = '#333';
     } else {
         attachlist.style.display = "none";
-        buttondiv.style.color = '#333';
-        buttondiv.style.background = 'none';
     }
 }
 var attachbutton = document.getElementById('button-file');
-attachbutton.onclick = myFunction;
+attachbutton.onclick = displaylist;
